@@ -52,12 +52,12 @@ const SignupForm = () => {
         </p>
       </div>
       <button className="w-full bg-[#5f5af6] text-center rounded-md  font-medium text-lg py-3 text-white cursor-pointer">
-        Sign In
+        Sign Up
       </button>
       <p className="text-[#a3adbb] text-center mt-3">
-        Dont have Account?{" "}
-        <Link className="text-[#5f5af6]" to={"/signup"}>
-          Create account
+        Already have an account?{" "}
+        <Link className="text-[#5f5af6]" to={"/login"}>
+          Sign In
         </Link>
       </p>
       <div className="flex flex-row items-center gap-3 my-5">
