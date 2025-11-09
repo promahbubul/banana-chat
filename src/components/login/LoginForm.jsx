@@ -1,11 +1,14 @@
 import { LockKeyhole, Mail } from "lucide-react";
-import LabelInput from "./LabelInput";
+import LabelInput from "../ui/LabelInput";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import SocialLoginBtn from "./SocialLoginBtn";
+import SocialLoginBtn from "../ui/SocialLoginBtn";
+import { MdCheckBoxOutlineBlank, MdCheckBox } from "react-icons/md";
+import useLoginStore from "../../store/useLoginStore";
 
 const LoginForm = () => {
+  const { isChecked, setIsChecked } = useLoginStore();
   return (
     <form className="bg-[#26334d] mt-5 rounded-md p-10 ">
       <LabelInput
@@ -21,13 +24,22 @@ const LoginForm = () => {
       />
       <div className="flex flex-row items-center justify-between my-5">
         <div className="flex flex-row items-center gap-2 ">
-          <input
-            type="checkbox"
-            name=""
-            id=""
-            className="text-2xl  border border-[#697a9b] hover:border-[#5f5af6] accent-[#5f5af6] bg-transparent w-5 rounded-md h-5 "
-          />
-          <p className="text-[#a3adbb] text-base">Remember me</p>
+          <div
+            onClick={() => setIsChecked(!isChecked)}
+            className="rounded-xl cursor-pointer overflow-hidden"
+          >
+            {isChecked ? (
+              <MdCheckBox className="text-2xl text-[#5f5af6] hover:text-[#5f5af6] " />
+            ) : (
+              <MdCheckBoxOutlineBlank className="text-2xl text-[#697a9b] hover:text-[#5f5af6] " />
+            )}
+          </div>
+          <p
+            onClick={() => setIsChecked(!isChecked)}
+            className="text-[#a3adbb] text-base cursor-pointer"
+          >
+            Remember me
+          </p>
         </div>
         <p className="text-sm text-[#697a9b] cursor-pointer hover:text-[#a3adbb]">
           Forgot Password?
