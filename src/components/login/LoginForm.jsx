@@ -1,6 +1,9 @@
 import { LockKeyhole, Mail } from "lucide-react";
 import LabelInput from "./LabelInput";
 import { Link } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+import SocialLoginBtn from "./SocialLoginBtn";
 
 const LoginForm = () => {
   return (
@@ -43,6 +46,10 @@ const LoginForm = () => {
         <div className="w-full h-px bg-[#697a9b]"></div>
         <p className="text-[#697a9b] font-medium">OR</p>
         <div className="w-full h-px bg-[#697a9b]"></div>
+      </div>
+      <div className="flex flex-row items-center gap-5">
+        <SocialLoginBtn title={"Google"} Icon={FcGoogle} />
+        <SocialLoginBtn title={"Github"} Icon={FaGithub} />
       </div>
     </form>
   );
