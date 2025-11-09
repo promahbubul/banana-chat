@@ -39,6 +39,11 @@ const LoginForm = () => {
           Create account
         </Link>
       </p>
+      <div className="flex flex-row items-center gap-3 my-5">
+        <div className="w-full h-px bg-[#697a9b]"></div>
+        <p className="text-[#697a9b] font-medium">OR</p>
+        <div className="w-full h-px bg-[#697a9b]"></div>
+      </div>
     </form>
   );
 };
